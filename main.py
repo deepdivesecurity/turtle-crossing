@@ -32,7 +32,6 @@ def main():
             player.reset()
             car.increase_speed()
             scoreboard.increase_level()
-            pass
 
         # Check for collision with a car
         if car.distance(player) < 35: 
