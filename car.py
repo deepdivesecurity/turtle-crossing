@@ -1,5 +1,6 @@
 from turtle import Turtle
 import random
+from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 
 COLORS = ["white", "red", "green", "blue", "yellow"]
 STARTING_MOVE_DISTANCE = 5
@@ -15,11 +16,15 @@ class Car(Turtle):
         self.color(random.choice(COLORS))
         self.shapesize(1, 2)
         self.penup()
+        self.goto(SCREEN_WIDTH // 2, random.randrange(-SCREEN_HEIGHT // 2, SCREEN_HEIGHT // 2, 20))
+        self.speed = STARTING_MOVE_DISTANCE
 
-    # def move(self): 
-    #     new_x = self.xcor() + self.x_move
-    #     new_y = self.ycor() + self.y_move
-    #     self.goto(new_x, new_y)
+    def move(self): 
+        new_x = self.xcor() - self.speed
+        self.goto(new_x, self.ycor())
+
+    def increase_speed(self): 
+        self.speed += MOVE_INCREMENT
 
     # def bounce_x(self): 
     #     self.x_move *= -1

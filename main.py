@@ -1,4 +1,4 @@
-from turtle import Screen, Turtle
+from turtle import Screen
 from car import Car
 from scoreboard import Scoreboard
 from player import Player
@@ -24,11 +24,11 @@ def main():
     game_on = True
     while game_on: 
         time.sleep(0.1)
-        # car.move()
+        car.move()
         screen.update()
 
         # Check if turtle made it to the other side
-        
+
 
         # Check for collision with a car
         if car.distance(player) < 20: 
