@@ -1,9 +1,9 @@
 from turtle import Turtle
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 
-ALIGNMENT = "left"
+ALIGNMENT = "center"
 FONT = ("Arial", 24, "normal")
-COLOR = "black"
+COLOR = "red"
 
 class Scoreboard(Turtle): 
     def __init__(self):
