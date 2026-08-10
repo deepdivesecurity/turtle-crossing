@@ -29,6 +29,7 @@ def main():
         # Check if turtle made it to the other side
         if player.ycor() > SCREEN_HEIGHT // 2 - 20: 
             # Reset game, increase level, and increase speed of cars
+            player.reset()
             pass
 
         # Check for collision with a car

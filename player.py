@@ -17,3 +17,7 @@ class Player(Turtle):
 
     def up(self): 
         self.goto(self.xcor(), self.ycor() + 10)
+
+    def reset(self): 
+        self.penup()
+        self.goto(0, -SCREEN_HEIGHT / 2 - 20)

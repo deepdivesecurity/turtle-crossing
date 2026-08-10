@@ -25,8 +25,4 @@ class Car(Turtle):
 
     def increase_speed(self): 
         self.speed += MOVE_INCREMENT
-
-    def reset(self): 
-        self.penup()
-        self.goto(SCREEN_WIDTH // 2, random.randrange(-SCREEN_HEIGHT // 2, SCREEN_HEIGHT // 2, 20))
         
