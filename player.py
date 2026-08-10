@@ -14,3 +14,5 @@ class Player(Turtle):
         self.color("white")
         self.penup()
         self.goto(0, -SCREEN_HEIGHT / 2 - 20)
+
+    

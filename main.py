@@ -28,12 +28,13 @@ def main():
         screen.update()
 
         # Check if turtle made it to the other side
-
+        if player.ycor() > SCREEN_HEIGHT - 20: 
+            pass
 
         # Check for collision with a car
         if car.distance(player) < 20: 
-            pass            
-
+            scoreboard.gameover()
+            game_on = False
         
     screen.exitonclick()
 
