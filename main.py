@@ -30,6 +30,8 @@ def main():
         if player.ycor() > SCREEN_HEIGHT // 2 - 20: 
             # Reset game, increase level, and increase speed of cars
             player.reset()
+            car.increase_speed()
+            scoreboard.increase_level()
             pass
 
         # Check for collision with a car
