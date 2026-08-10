@@ -19,7 +19,6 @@ def main():
 
     screen.listen()
     screen.onkey(player.up, "Up")
-    screen.onkey(player.down, "Down")
 
     game_on = True
     while game_on: 
@@ -28,12 +27,12 @@ def main():
         screen.update()
 
         # Check if turtle made it to the other side
-        if player.ycor() > SCREEN_HEIGHT - 20: 
+        if player.ycor() > SCREEN_HEIGHT // 2 - 20: 
             pass
 
         # Check for collision with a car
-        if car.distance(player) < 20: 
-            scoreboard.gameover()
+        if car.distance(player) < 40: 
+            scoreboard.game_over()
             game_on = False
         
     screen.exitonclick()
