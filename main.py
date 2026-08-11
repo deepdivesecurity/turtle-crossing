@@ -15,7 +15,7 @@ def main():
     scoreboard = Scoreboard()
 
     player = Player()
-    car = Car()
+    cars = Car()
 
     screen.listen()
     screen.onkey(player.up, "Up")
@@ -23,20 +23,22 @@ def main():
     game_on = True
     while game_on: 
         time.sleep(0.1)
-        car.move()
         screen.update()
+        cars.create_car()
+        cars.move()
 
         # Check if turtle made it to the other side
         if player.ycor() > SCREEN_HEIGHT // 2 - 20: 
             # Reset game, increase level, and increase speed of cars
             player.reset()
-            car.increase_speed()
+            cars.increase_speed()
             scoreboard.increase_level()
 
         # Check for collision with a car
-        if car.distance(player) < 35: 
-            scoreboard.game_over()
-            game_on = False
+        for car in cars.all_cars: 
+            if car.distance(player) < 35: 
+                scoreboard.game_over()
+                game_on = False
         
     screen.exitonclick()
 
